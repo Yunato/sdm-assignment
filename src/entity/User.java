@@ -7,7 +7,7 @@ package entity;
 public abstract class User {
 
     /**
-     * 識別子を返す．
+     * ユーザを判別するための識別子を返す．
      * @return 識別子
      */
     abstract public long getIdentifier();

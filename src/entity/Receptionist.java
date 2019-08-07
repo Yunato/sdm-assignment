@@ -7,7 +7,7 @@ package entity;
 public class Receptionist extends User {
 
     /**
-     * 職員ID
+     * 職員ID(職員を判別するための識別子．本実装には職員は予約受け付け担当者しか存在しない．)
      */
     private long id;
 
@@ -20,7 +20,7 @@ public class Receptionist extends User {
     }
 
     /**
-     * 識別子である職員IDを返す．
+     * 職員を判別するための識別子である職員IDを返す．
      * @return 職員ID
      */
     @Override
@@ -30,6 +30,7 @@ public class Receptionist extends User {
 
     /**
      * 予約管理プロセスにアクセスする．
+     * (簡易的な実装であるため，本メソッドに状態管理クラスのメソッドを呼び出すステートメントを記述する)
      */
     @Override
     public void access() { }

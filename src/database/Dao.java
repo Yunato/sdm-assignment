@@ -13,16 +13,16 @@ import entity.Reservation;
 public class Dao {
 
     /**
-     * 保存中の予約情報群．(データベース再現用フィールド)
+     * 保存中の予約情報群(データベース再現用フィールド)
      */
     static private ArrayList<Reservation> reservations = new ArrayList<>();
 
     /**
-     * レコードを追加する．
+     * レコード(新規予約情報)を追加する．
      * @param reservation 新規レコード
      * @return データベースに追加できたか
      */
-    public boolean addReservation(Reservation reservation) {
+    public synchronized boolean addReservation(Reservation reservation) {
         boolean result = true;
         Set<Reservation> checkHash = new HashSet<>(reservations);
         for (Reservation r : reservations) {
@@ -35,19 +35,19 @@ public class Dao {
     }
 
     /**
-     * レコードを削除する．
+     * レコード(申請済み予約情報)を削除する．
      * @param reservation 削除対象予約情報
      */
-    public void removeReservation(Reservation reservation) {
+    public synchronized void removeReservation(Reservation reservation) {
         reservations.remove(reservation);
     }
 
     /**
-     * 診察券番号からレコードを取得する．
+     * 診察券番号からレコード(申請済み予約情報)を取得する．
      * @param cardNum 診察券番号
      * @return 取得したレコード群
      */
-    public ArrayList<Reservation> getRecords(long cardNum) {
+    public synchronized ArrayList<Reservation> getRecords(long cardNum) {
         ArrayList<Reservation> result = new ArrayList<>();
         for (Reservation r : reservations) {
             if (r.getCardNum() == cardNum)
@@ -57,12 +57,12 @@ public class Dao {
     }
 
     /**
-     * 日付と担当医師名からレコードを取得する．
+     * 日付と担当医師名からレコード(申請済み予約情報)を取得する．
      * @param date 予約日
      * @param drName 担当医師名
      * @return 取得したレコード群
      */
-    public ArrayList<Reservation> getRecords(long date, String drName) {
+    public synchronized ArrayList<Reservation> getRecords(long date, String drName) {
         ArrayList<Reservation> result = new ArrayList<>();
         for (Reservation r : reservations) {
             if (r.getDate() == date && r.getDrName().equals(drName))

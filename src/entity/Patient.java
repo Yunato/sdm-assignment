@@ -9,7 +9,7 @@ import control.StateManager;
 public class Patient extends User {
 
     /**
-     * 診察券番号
+     * 診察券番号(患者を判別するための識別子)
      */
     private long cardNum;
 
@@ -22,7 +22,7 @@ public class Patient extends User {
     }
 
     /**
-     * 識別子である診察券番号を返す．
+     * 患者を判別するための識別子である診察券番号を返す．
      * @return 診察券番号
      */
     @Override
@@ -32,6 +32,7 @@ public class Patient extends User {
 
     /**
      * 予約管理プロセスにアクセスする．
+     * (簡易的な実装であるため，本メソッドに状態管理クラスのメソッドを呼び出すステートメントを記述する)
      */
     @Override
     public void access() {

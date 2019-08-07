@@ -11,7 +11,7 @@ import entity.Reservation;
 public class OutputReservationInformation {
 
     /**
-     * 条件に合う予約情報群を出力する．
+     * 条件から絞り込まれた予約情報群を出力する．
      * @param reservations 予約情報群
      */
     public void show(ArrayList<Reservation> reservations) {

@@ -13,7 +13,7 @@ import entity.Reservation;
 public class RemoveReservationList {
 
     /**
-     * 予約を選択する．
+     * 診察券番号における既に申請されている予約一覧を表示し，その中から予約をユーザが選択する．
      * @param cardNum 診察券番号
      * @return 選択された予約情報
      */

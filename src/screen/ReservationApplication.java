@@ -11,7 +11,7 @@ import entity.Reservation;
 public class ReservationApplication {
 
     /**
-     * ユーザからの入力情報を得る．
+     * ユーザから予約申請情報の入力を得る．
      * @param cardNum 診察券番号
      * @return 入力された予約情報
      */

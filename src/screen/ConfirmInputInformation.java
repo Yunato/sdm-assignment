@@ -11,7 +11,8 @@ import entity.Reservation;
 public class ConfirmInputInformation {
 
     /**
-     * ユーザから確認の通知を得る．
+     * システムが処理する対象の情報に対して，それが正しいのかどうかを利用者に確認する．
+     * 本メソッドは確認が得られたら true，確認が得られなかったら false を返す．
      * @param reservation 確認対象情報
      * @return 確認ボタンが押されたかどうか
      */

@@ -11,7 +11,8 @@ import entity.Reservation;
 public class InputConditionForSearch {
 
     /**
-     * 入力情報を得る．これにより確認したい予約状況を明確化する．
+     * 既に申請済みである予約状況を知る前処理として，検索条件情報の入力を得る．
+     * これにより確認したい予約状況を明確化する．
      * @return 入力された条件
      */
     public Reservation getInputInformation() {
